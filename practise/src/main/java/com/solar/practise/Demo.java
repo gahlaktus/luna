@@ -10,9 +10,10 @@ public class Demo {
         if (array == null || array.length == 0) {
             return 0;
         }
-
-        int greatestSum = array[0];   //用来保存当前的最大值
-        int currentSum = 0;  //表示当前的和
+        //用来保存当前的最大值
+        int greatestSum = array[0];
+        //表示当前的和
+        int currentSum = 0;
         for (int i = 0; i < array.length; i++) {
             if (currentSum <= 0) {
                 //当前和小于等于0，保存当前的最大值
