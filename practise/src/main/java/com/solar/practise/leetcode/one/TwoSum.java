@@ -1,5 +1,9 @@
 package com.solar.practise.leetcode.one;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.NoSuchElementException;
+
 /**
  * @author huangzhibo
  * @date 2019-10-23
@@ -41,6 +45,23 @@ public class TwoSum {
             }
         }
         throw new IllegalArgumentException("No two sum solution");
+    }
+
+
+    public static int[] twoSum2(int[] nums, int target){
+
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
+
+        for (int i = 0; i < nums.length; i++) {
+            int les = target - nums[i];
+            if (map.containsKey(les)){
+                return new int[]{map.get(les), i};
+            }
+            map.put(nums[i], i);
+        }
+
+        throw new IllegalArgumentException("No two sum solution");
+
     }
 
 }
